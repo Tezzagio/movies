@@ -3,9 +3,11 @@
 one:
   title: MyText
   description: MyText
-  year_release: 1
+  year_released: 1
+  movie_poster: MyString
 
 two:
   title: MyText
   description: MyText
-  year_release: 1
+  year_released: 1
+  movie_poster: MyString
