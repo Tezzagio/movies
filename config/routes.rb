@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root 'movies#index'
   # get '/movies', to:'movies#index'
   get '/search' => 'movies#search'
