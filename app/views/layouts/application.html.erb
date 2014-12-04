@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MovieApp</title>
+  <title>Movie "App"</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
-
+Error: <% flash[:error] if flash[:error] %><br>
+Info: <% flash[:info] if flash[:info] %>
+	<div id="Body">
+		<%= yield %>
+	</div>
 </body>
 </html>

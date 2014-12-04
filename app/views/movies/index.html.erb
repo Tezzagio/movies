@@ -1,2 +1,15 @@
 <h1>Movies Awseome App</h1>
 <p>Welcome to RetFlix! See our collection of movies below</p>
+
+<form action= "/search" action="post">
+	<input name="q" type="text"/>
+	<button>Search</button>
+</form>
+
+<p>
+	<%= link_to 'Add a New Movie', movies_path %>
+</p>
+
+<% @movies.each do |movie| %>
+	<%= render partial: 'movie', locals: { a_movie: movie } %>
+<% end %>

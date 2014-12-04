@@ -1,0 +1,11 @@
+<h1>You Searched for: <%= @search %></h1>
+
+<% if @no_results %>
+<h1>NOT FOUND</h1>
+<% else %>
+<p>Is this the movie you were looking for?</p>
+<p>
+<%= render partial: 'movie', locals: { a_movie: @movie } %>
+</p>
+
+<% end %>

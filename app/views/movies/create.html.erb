@@ -1,0 +1,9 @@
+<% if @movie.errors.any? %>
+<ol>
+<% @movie.errors.full_messages.each do |message| %>
+<li><%= message %></li>
+<% end %>
+</ol>
+<% end %>
+
+<%= render partial: 'form', locals: { movie: @movie } %>
