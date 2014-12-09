@@ -1,4 +1,8 @@
 <h2><%= a_movie.title %></h2>
 <p><strong>Description:</strong><br><blockquote><%= a_movie.description %></blockquote><p>
 <h3><strong>Year released: </strong><%= a_movie.year_released %></h3>
+<% if a_movie.user.present? %>
+<h5><strong>Created by: </strong><%= a_movie.user.email %> <strong>on: </strong><%= a_movie.user.created_at %></h5>
+
+<% end %>
 <hr>

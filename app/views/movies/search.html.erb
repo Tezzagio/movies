@@ -1,5 +1,18 @@
 <h1>You Searched for: <%= @search %></h1>
 
+<p>Please find the results of your search below, or try a different search.</p>
+
+<form action= "/search" action="post">
+	<input name="q" type="text"/>
+	<button>Search</button>
+</form>
+<p>
+	<%= link_to 'Add a New Movie', movies_path %>
+</p>
+<p>
+	<%= link_to 'Movie List', root_path %>
+</p>
+
 <% if @no_results %>
 <h1>NOT FOUND</h1>
 <% else %>

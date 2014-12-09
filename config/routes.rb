@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
-  devise_for :users
+
   root 'movies#index'
   # get '/movies', to:'movies#index'
+
+  devise_for :users
+
+  devise_scope :user do 
+    get '/logout' => 'devise/sessions#destroy', as: 'logout'
+  end
+
   get '/search' => 'movies#search'
   get '/new' => 'movies#new'
   post '/new' => 'movies#create', as: 'movies'

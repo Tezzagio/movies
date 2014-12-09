@@ -1,8 +1,10 @@
 class Movie < ActiveRecord::Base
-	validates :name, presence: true, uniqueness: true
+	belongs_to :user
+
+	validates :title, presence: true, uniqueness: true
 	validates :description, presence: true
 	
 	def self.search(search)
-		self.where( "name LIKE ?", "%#{search}%" ).first
+		self.where( "title LIKE ?", "%#{search}%" ).first
 	end
 end

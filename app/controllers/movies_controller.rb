@@ -1,4 +1,6 @@
 class MoviesController < ApplicationController
+  before_action :authenticate_user!, only: [ :new, :create ]
+
   def index
   	@movies = Movie.order('id DESC').all
   end
@@ -14,7 +16,7 @@ class MoviesController < ApplicationController
   end
 
   def create
-  	@movie = Movie.new(parameters)
+  	@movie = current_user.movies.new(parameters)
     if @movie.valid?
     	@movie.save
       flash[:info] = 'New movie created successfully'
